@@ -33,6 +33,12 @@
           </li>
         <% end %>
       </ul>
+        <%= simple_form_for :search, url: '#', method: :get, class: 'd-flex' do |f| %>
+          <%= f.input :query, label: false, placeholder: 'Search', input_html: { class: 'form-control me-2' } %>
+          <%= f.button :submit, 'Search', class: 'btn btn-outline-success' %>
+        <% end %>
+
+      <%= link_to "Add Flat", "#", class: "btn btn-primary ms-2" %>
     </div>
   </div>
 </div>
