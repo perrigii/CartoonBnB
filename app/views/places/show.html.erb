@@ -1,0 +1,17 @@
+<div class="show-body">
+  <div class="show-card">
+    <h1 class="text-center"><%= @place.name %></h1>
+    <div class="card-infos border rounded m-8">
+      <p>Address: <%= @place.address %></p>
+      <p>Description: <%= @place.description%></p>
+      <p>Guests: <%= @place.number_of_guests %></p>
+      <p>Price: <%= @place.price %> reais </p>
+      <p>Host: <%= @place.user.email %></p>
+    </div>
+  </div>
+  <div class="row justify-content-around m-8">
+    <%= link_to 'Back', places_path, class: 'btn btn-sm btn-primary col-2' %>
+    <%= link_to 'Buy', places_path, class: 'btn btn-sm btn-primary col-2' %>
+    <%= link_to 'Rest', places_path, class: 'btn btn-sm btn-primary col-2' %>
+  </div>
+</div>
