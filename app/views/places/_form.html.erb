@@ -1,0 +1,15 @@
+<%= simple_form_for([@place]) do |f| %>
+  <div class="form-inputs">
+    <div class="col-6">
+      <%= f.input :name, as: :string %>
+      <%= f.input :address, as: :text %>
+      <%= f.input :number_of_guests, as: :integer%>
+      <%= f.input :description, as: :text%>
+      <%= f.input :price, as: :float %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Create", class: "btn btn-primary" %>
+  </div>
+<% end %>
