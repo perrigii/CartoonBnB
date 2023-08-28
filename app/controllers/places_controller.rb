@@ -1,4 +1,5 @@
 class PlacesController < ApplicationController
+  before_action :set_place, only: %i[show edit update destroy]
 
   def index
     @places = Place.all
@@ -15,34 +16,34 @@ class PlacesController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
 
-    def show
+  def show
+  end
+
+  def edit
+  end
+
+  def update
+    if @place.update(place_params)
+      redirect_to place_path(@place)
+    else
+      render :new, status: :unprocessable_entity
     end
+  end
 
-    def edit
-    end
+  def destroy
+    @place.destroy
+    redirect_to places_path, status: :see_other
+  end
 
-    def update
-      if @place.update(place_params)
-        redirect_to place_path(@place)
-      else
-        render :new, status: :unprocessable_entity
-      end
-    end
+  private
 
-    def destroy
-      @place.destroy
-      redirect_to places_path, status: :see_other
-    end
+  def set_place
+    @place = Place.find(params[:id])
+  end
 
-    private
-
-    def set_place
-      @place = Place.find(params[:id])
-    end
-
-    def place_params
-      params.require(:place).permit(:name, :address, :number_of_guests, :description, :picture_url, :price)
-    end
+  def place_params
+    params.require(:place).permit(:name, :address, :number_of_guests, :description, :picture_url, :price)
   end
 end
