@@ -4,18 +4,22 @@ class OrdersController < ApplicationController
     @user = User.find(params[:user_id])
     @orders = Order.all
   end
+
   def new
     @order = Order.new
     @users = User.all
     @place = Place.find(params[:place_id])
   end
 
-  def show; end
+  def show
+    @order = Order.find(params[:id])
+  end
 
   def create
     @place = Place.find(params[:place_id])
     @order = Order.new(order_params)
     @order.place = @place
+    @order.user = current_user
     if @order.save
       redirect_to place_path(@place)
     else
