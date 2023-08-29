@@ -4,9 +4,11 @@ class PlacesController < ApplicationController
 
   def index
     if params[:search].present? && params[:search][:query].present?
+      @query = params[:search][:query]  # Set @query
       search_query = params[:search][:query]
-      @places = Place.where('name LIKE ?', "%#{search_query}%")
+      @places = Place.where('name ILIKE ?', "%#{search_query}%")
     else
+      @query = nil  # Set @query to nil when no search query is provided
       @places = Place.all
     end
   end
