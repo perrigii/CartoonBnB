@@ -4,14 +4,16 @@
       <div class="mx-auto col-10 col-md-8 col-lg-6">
         <%= f.input :name, as: :string %>
         <%= f.input :address, as: :text %>
-        <%= f.input :number_of_guests, as: :integer%>
-        <%= f.input :description, as: :text%>
+        <%= f.input :number_of_guests, as: :integer %>
+        <%= f.input :description, as: :text %>
+        <%= f.input :picture_url, as: :url %>
         <%= f.input :price, as: :float %>
       </div>
     </div>
   </div>
 
   <div class="form-actions">
+  <br>
     <div class="row">
       <div class="mx-auto col-10 col-md-8 col-lg-6">
         <%= f.button :submit, "Create", class: "btn btn-primary" %>
