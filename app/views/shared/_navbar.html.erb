@@ -19,7 +19,7 @@
           </li>
           <li class="nav-item dropdown">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar me-2", alt: "dropdown menu" %>
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Action", "#", class: "dropdown-item" %>
@@ -28,7 +28,7 @@
             </div>
           </li>
         <% else %>
-          <div class="mb-3 d-flex align-items-center">
+          <div class="d-flex align-items-center">
             <li class="nav-item me-2">
               <%= link_to "Login", new_user_session_path, class: "nav-link bg-primary text-white ms-2" %>
             </li>
@@ -38,7 +38,7 @@
       <%= simple_form_for :search, url: places_path, method: :get, class: 'd-flex align-items-center' do |f| %>
         <div class="row g-2">
           <div class="col-auto">
-            <%= f.input :query, label: false, placeholder: 'Search', input_html: { class: 'form-control' } %>
+            <%= f.input :query, label: false, placeholder: 'Search', input_html: { class: 'form-control' }, wrapper_html: {class: 'm-0'} %>
           </div>
 
             <div class="col-auto"> <!-- Second column for search button -->
