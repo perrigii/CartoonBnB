@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "pages#home"
   resources :places do
-    resources :order, only: %i[new create]
+    resources :orders, only: %i[new create]
   end
-  resources :order, only: %i[index show]
+  resources :orders, only: %i[index show]
 end
