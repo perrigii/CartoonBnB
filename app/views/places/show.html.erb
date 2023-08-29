@@ -1,17 +1,35 @@
-<div class="show-body">
+<%# <div class="show-body">
   <div class="show-card">
-    <h1 class="text-center"><%= @place.name %></h1>
-    <div class="card-infos border rounded m-8">
-      <p>Address: <%= @place.address %></p>
-      <p>Description: <%= @place.description%></p>
-      <p>Guests: <%= @place.number_of_guests %></p>
-      <p>Price: <%= @place.price %> reais </p>
-      <p>Host: <%= @place.user.email %></p>
+    <div class="background" style="background-image: url('https://images.unsplash.com/photo-1494526585095-c41746248156?w=1200'); background-size: cover">
+      <h1 class="text-center"><%= @place.name </h1>%>
+      <%# <div class="card-infos border rounded m-8 background-color:#F4F4F4">
+        <%# <p>Address: <%= @place.address </p> %>
+        <%# <p>Description: <%= @place.description</p> %>
+        <%# <p>Guests: <%= @place.number_of_guests</p> %>
+        <%# <p>Price: <%= @place.price</p> %>
+        <%# <p>Host: <%= @place.user.email</p> %>
+      <%# </div>
     </div>
   </div>
-  <div class="row justify-content-around m-8">
-    <%= link_to 'Back', places_path, class: 'btn btn-sm btn-primary col-2' %>
-    <%= link_to 'Buy', places_path, class: 'btn btn-sm btn-primary col-2' %>
-    <%= link_to 'Rest', places_path, class: 'btn btn-sm btn-primary col-2' %>
+</div> %>
+<div class="">
+  <div class="d-flex">
+    <div class="card col-lg-8 my-3 ms-2">
+      <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?w=1200" class="card-img-top" style="height:460px">
+      <div class="card-body">
+        <h3 class="text-center"><%= @place.name %></h3>
+        <p class="card-text"><%= @place.description%>, localized at <%= @place.address %></p>
+        <p class="card-text">Accomodates up to <%= @place.number_of_guests %> guests</p>
+        <p class="card-text"><%= @place.price %> reais/night</p>
+        <p class="card-text">Hosted by <%= @place.user.email %></p>
+        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+    <div class="d-flex flex-column col-lg-4 px-3 my-3">
+      <%= link_to 'Back', places_path, class: 'btn btn-primary mb-3 p-3' %>
+      <%= link_to 'Buy', places_path, class: 'btn btn-primary mb-3 p-3' %>
+      <%= link_to 'Rest', places_path, class: 'btn btn-primary mb-3 p-3' %>
+      <div class="">
+    </div>
   </div>
 </div>
