@@ -1,13 +1,12 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
+
   def index
-    @user = User.find(params[:user_id])
-    @orders = Order.all
+    @orders = current_user.orders
   end
 
   def new
     @order = Order.new
-    @users = User.all
     @place = Place.find(params[:place_id])
   end
 
@@ -21,7 +20,7 @@ class OrdersController < ApplicationController
     @order.place = @place
     @order.user = current_user
     if @order.save
-      redirect_to place_path(@place)
+      redirect_to orders_path
     else
       render :new, status: :unprocessable_entity
     end

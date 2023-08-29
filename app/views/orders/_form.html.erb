@@ -1,9 +1,8 @@
-<%= simple_form_for(@order) do |f| %>
+<%= simple_form_for([@place, @order]) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.association :place %>
     <%= f.input :start_date %>
     <%= f.input :end_date %>
     <%= f.input :comment %>
