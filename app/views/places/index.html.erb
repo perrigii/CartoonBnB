@@ -21,7 +21,9 @@
     <% @places.each do |place| %>
       <div class="col-md-4">
         <div class="place-card">
-          <div class="place-card-image" style="background-image: url('<%= place.picture_url %>')"></div>
+          <div class="place-card-image">
+            <img class="card-img-top" src="<%= place.picture_url %>" alt="...">
+          </div>
           <div class="place-card-content">
             <div class="place-card-title">
               <h4><%= place.name %></h4>
