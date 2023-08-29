@@ -7,8 +7,8 @@
 
   <div class="row">
     <div class="col">
-      <% if @query %>
-        <p>You searched for <strong><%= @query %></strong>. We found <%= @places.count %> places out of our <%= place.count %> on our website.</p>
+      <% if @query.present? %>
+        <p>You searched for <strong><%= @query %></strong>. We found <%= @places.count %> places out of our <%= Place.count %> on our website.</p>
       <% else %>
         <p>All <%= Place.count %> places.</p>
       <% end %>
