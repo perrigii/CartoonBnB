@@ -1,0 +1,13 @@
+<div class="new-order-container">
+  <div class="title-new text-center">
+    <h1>Choose your check-in and out</h1>
+  </div>
+  <div class="create-form">
+    <%= render "form", order: @order %>
+  </div>
+  <br>
+
+  <div>
+    <%= link_to "Back to places", places_path, class: "btn btn-sm btn-primary" %>
+  </div>
+</div>
