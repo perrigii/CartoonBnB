@@ -3,7 +3,14 @@ class PlacesController < ApplicationController
   before_action :authenticate_user!, only: %i[new create update destroy]
 
   def index
-    @places = Place.all
+    if params[:search].present? && params[:search][:query].present?
+      @query = params[:search][:query]  # Set @query
+      search_query = params[:search][:query]
+      @places = Place.where('name ILIKE ?', "%#{search_query}%")
+    else
+      @query = nil  # Set @query to nil when no search query is provided
+      @places = Place.all
+    end
   end
 
   def new
