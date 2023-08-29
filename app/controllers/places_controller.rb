@@ -1,5 +1,6 @@
 class PlacesController < ApplicationController
   before_action :set_place, only: %i[show edit update destroy]
+  before_action :authenticate_user!, only: %i[new create update destroy]
 
   def index
     @places = Place.all
@@ -11,6 +12,7 @@ class PlacesController < ApplicationController
 
   def create
     @place = Place.new(place_params)
+    @place.user = current_user
     if @place.save
       redirect_to places_path
     else
