@@ -21,7 +21,7 @@
     <% @places.each do |place| %>
       <div class="col-md-4">
         <div class="place-card">
-          <div class="place-card-image" style="background-image: url('<%= place.picture_url %>')"></div>
+          <div class="place-card-image" style="height: 240px; background-size: cover; background-image: url('<%= place.picture_url %>')"></div>
           <div class="place-card-content">
             <div class="place-card-title">
               <h4><%= place.name %></h4>
@@ -32,7 +32,7 @@
                 <i class="fa-solid fa-people-line"></i>
                 <span><%= place.number_of_guests %></span>
               </div>
-              <div class="flex align-items-center ms-3">
+              <div class="flex align-items-center">
                 <i class="fa-solid fa-euro-sign"></i>
                 <span><%= place.price %></span>
               </div>
