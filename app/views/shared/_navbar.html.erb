@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "https://wallpaperaccess.com/full/2171186.jpg" %>
+      <%= image_tag "https://www.imgbly.com/ib/eOb8ZzQbE8.png" %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,15 +28,23 @@
             </div>
           </li>
         <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
+          <div class="">
+            <li class="nav-item">
+              <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            </li>
+          </div>
         <% end %>
       </ul>
-        <%= simple_form_for :search, url: '#', method: :get, class: 'd-flex' do |f| %>
-          <%= f.input :query, label: false, placeholder: 'Search', input_html: { class: 'form-control me-2' } %>
-          <%= f.button :submit, 'Search', class: 'btn btn-outline-success' %>
-        <% end %>
+        <%= simple_form_for :search, url: places_path, method: :get, class: 'd-flex align-items-center' do |f| %>
+        <div class="row g-2">
+          <div class="col-auto">
+            <%= f.input :query, label: false, placeholder: 'Search', input_html: { class: 'form-control' } %>
+          </div>
+          <div class="col-auto"> <!-- Second column for search button -->
+            <%= f.button :submit, 'Search', class: 'btn btn-outline-success' %>
+          </div>
+        </div>
+      <% end %>
 
       <%= link_to "Add Flat", new_place_path, class: "btn btn-primary ms-2" if current_user %>
     </div>
