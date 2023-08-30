@@ -12,15 +12,46 @@
   }
 }
 
-// .coragem {
-//   width: 100px;
-//   border-radius: 4px;
-//   position: absolute;
-//   right: 100px;
-//   margin: 8px;
-// }
+.total-cards {
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+  width:100%;
+	height:400px;
+  box-sizing: border-box;
+  overflow: hidden;
+  &:hover {
+    .edit-btn, .delete-btn{
+      display: block;
+      transition-delay: 1s;
+    }
+  }
+}
 
-.orders-body {
-  background-image: url(https://kanto.legiaodosherois.com.br/w728-h381-gnw-cfill-gcc/wp-content/uploads/2022/06/legiao_ePlDdpLrvJYj.jpg.webp);
-  background-size: cover;
+
+.edit-btn{
+  position: absolute;
+  top: 4px;
+  left: -8px;
+  display: none;
+  opacity: 0.7;
+}
+
+.delete-btn{
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  display: none;
+  opacity: 0.7
+}
+
+.button-details{
+  border-radius: 20px;
+}
+
+
+.flex{
+  display: flex;
+  align-items: center;    /* Centraliza horizontalmente */
+  justify-content: center;
 }

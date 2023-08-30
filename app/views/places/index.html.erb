@@ -15,41 +15,54 @@
     </div>
   </div>
 
-
-
-  <div class="row">
-    <% @places.each do |place| %>
-      <div class="col-md-4">
-        <div class="place-card">
-          <div class="place-card-image square-image">
-            <img class="card-img-top" src="<%= place.picture_url %>" alt="...">
-          </div>
-          <div class="place-card-content">
-            <div class="place-card-title">
-              <h4><%= place.name %></h4>
-            </div>
-            <p><%= place.address %></p>
-            <div class="flex">
-              <div class="flex align-items-center">
-                <i class="fa-solid fa-people-line"></i>
-                <span><%= place.number_of_guests %></span>
+  <section class="py-1">
+    <div class="cards container px-8 px-lg-8 mt-1">
+      <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+        <% @places.each do |place| %>
+          <div class="col mb-5">
+            <div class="total-cards card h-100">
+              <div class="place-card-image square-image">
+                <img class="card-img-top" src="<%= place.picture_url %>" alt="...">
               </div>
-              <div class="flex align-items-center">
-                <i class="fa-solid fa-euro-sign"></i>
-                <span><%= place.price %></span>
+              <div class="card-body p-3 text-center">
+                <div class="place-card-content">
+                  <div class="place-card-title">
+                    <h4 class="fw-bolder"><%= place.name %></h4>
+                  </div>
+                  <div class="flex">
+                    <div>
+                      <i class="fa-solid fa-dollar-sign"></i>
+                      <span><%= place.price %></span>
+                    </div>
+                    <div class="ms-3">
+                      <i class="fa-solid fa-people-group"></i>
+                      <span><%= place.number_of_guests %></span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="place-card-actions">
+                  <div class=" card-footer  pt-2 border-top-0 bg-transparent">
+                    <div class="text-center"><a class="button-details btn btn-primary mt-auto" href="/places/<%= place.id %>">See details</a></div>
+                  </div>
+
+                  <% if place.user_id == current_user&.id %>
+                    <%= link_to edit_place_path(place), class: "edit-btn ms-3" do %>
+                      <i class="fa-solid fa-pen-to-square text-black"></i>
+                    <% end %>
+                    <%= link_to place_path(place),
+                        data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+                        class: "delete-btn ms-3" do
+                    %>
+                      <i class="fa-solid fa-trash text-black"></i>
+                    <% end %>
+                  <% end %>
+                </div>
               </div>
             </div>
           </div>
-          <div class="place-card-actions">
-            <%= link_to "More info", place_path(place) %>
-            <%= link_to "Edit", edit_place_path(place), class: "ms-3 text-warning" %>
-            <%= link_to "Remove", place_path(place),
-                data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
-                class: "ms-3 text-danger"
-            %>
-          </div>
-        </div>
+        <% end %>
       </div>
-    <% end %>
-  </div>
+    </div>
+  </section>
 </div>
