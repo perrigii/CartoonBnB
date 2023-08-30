@@ -74,7 +74,7 @@ Place.create!(
   description: "Beatiful, very large pink house in the suburbs of Springfield. Pets are welcome.",
   picture_url: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fen%2Fc%2Fca%2F742_Evergreen_Terrace.png&f=1&nofb=1&ipt=773dea871482ec0ddc787dc7347a1ec987597f55eb6832b94e4f9d93f8faa743&ipo=images',
   price: 2000,
-  user: mburns
+  user: mrburns
 )
 
 Place.create!(
@@ -84,5 +84,5 @@ Place.create!(
   description: "Beatiful, very large pink house in the suburbs of Springfield. Pets are welcome.",
   picture_url: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fen%2Fc%2Fca%2F742_Evergreen_Terrace.png&f=1&nofb=1&ipt=773dea871482ec0ddc787dc7347a1ec987597f55eb6832b94e4f9d93f8faa743&ipo=images',
   price: 2000,
-  user: mburns
+  user: mrburns
 )
