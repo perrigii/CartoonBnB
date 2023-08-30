@@ -1,3 +1,9 @@
-<footer class="py-5 bg-dark" style="margin-top: 100px">
-    <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Cartoon BnB 2023</p></div>
-</footer>
+<% if current_page?(orders_path) %>
+  <footer class="py-5 bg-dark">
+      <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Cartoon BnB 2023</p></div>
+  </footer>
+<% else %>
+  <footer class="py-5 bg-dark" style="margin-top: 100px">
+      <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Cartoon BnB 2023</p></div>
+  </footer>
+<% end %>
