@@ -1,2 +1,26 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.order-subtitle {
+  color: rgb(255, 255, 255);
+  font-weight: bolder;
+  text-shadow: 1px 1px 2px #212121;
+  h3 {
+    font-size: 30px;
+    text-shadow: 1px 1px 1px #414141;
+    font-weight: 800;
+  }
+}
+
+// .coragem {
+//   width: 100px;
+//   border-radius: 4px;
+//   position: absolute;
+//   right: 100px;
+//   margin: 8px;
+// }
+
+.orders-body {
+  background-image: url(https://kanto.legiaodosherois.com.br/w728-h381-gnw-cfill-gcc/wp-content/uploads/2022/06/legiao_ePlDdpLrvJYj.jpg.webp);
+  background-size: cover;
+}
