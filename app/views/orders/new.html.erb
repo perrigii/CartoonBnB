@@ -3,11 +3,15 @@
     <h1>Choose your check-in and out</h1>
   </div>
   <div class="create-form">
+    <div class="row">
+      <div class="mx-auto col-10 col-md-8 col-lg-6">
     <%= render "form", order: @order %>
+      </div>
+    </div>
   </div>
   <br>
 
-  <div>
-    <%= link_to "Back to places", places_path, class: "btn btn-sm btn-primary" %>
+  <div class="button text-center">
+    <%= link_to "Back to places", places_path, class: "btn btn-sm btn-primary", style: "margin-bottom: 180px;" %>
   </div>
 </div>

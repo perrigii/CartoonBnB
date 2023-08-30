@@ -54,4 +54,20 @@
   display: flex;
   align-items: center;    /* Centraliza horizontalmente */
   justify-content: center;
+// .coragem {
+//   width: 100px;
+//   border-radius: 4px;
+//   position: absolute;
+//   right: 100px;
+//   margin: 8px;
+// }
+
+.orders-body {
+  background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpaperaccess.com%2Ffull%2F1615689.jpg&f=1&nofb=1&ipt=cf9179825146fcdd9fbbb3acb2d936e212b092896f762dab22d08eab5501af86&ipo=images);
+  background-size: cover;
+}
+
+.no-orders {
+  color: rgb(160, 96, 163);
+  font-weight: bold;
 }

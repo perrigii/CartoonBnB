@@ -1,4 +1,4 @@
-<div class="orders-body">
+<div class="orders-body" style="min-height: 985px;">
  <div id="orders-container" class="d-flex flex-column p-4">
     <div class="order-subtitle">
       <h3 class="text-center mt-4">My orders</h3>
@@ -12,10 +12,17 @@
         <p class="text-center">Check-in: <%= order.start_date %></p>
         <p class="text-center">Check-out: <%= order.end_date %></p>
         <p class="text-center">Comment: <%= order.comment %></p>
+        <%= link_to "Delete", orders_path,
+                  data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+                  class: "del-order text-center btn btn-danger"
+              %>
       </div>
       <% end %>
     <% else %>
-      <p class="text-center">There is no orders yet</p>
+      <div class="no-orders row justify-content-center">
+        <p class="text-center col-12 m-4">There are no orders yet</p>
+        <i class="fa-regular fa-face-frown-open fa-2xl text-center" style="color: #a636a2;"></i>
+      </div>
     <% end %>
     </div>
   </div>
