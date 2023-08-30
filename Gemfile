@@ -79,3 +79,5 @@ end
 
 gem "devise"
 gem "erb-formatter"
+gem "dotenv-rails"
+gem "cloudinary"
