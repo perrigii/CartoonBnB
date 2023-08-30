@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "pages#home"
   resources :places do
-    resources :orders, only: %i[new create]
+    resources :orders, only: %i[new create destoy]
   end
   get "/my_places", to: "places#my_places", as: :my_places
-  resources :orders, only: %i[index show]
+  resources :orders, only: %i[index show destroy]
 end
