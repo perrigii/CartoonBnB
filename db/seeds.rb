@@ -58,7 +58,7 @@ Place.create!(
 )
 
 Place.create!(
-  name: "Mr. Krabs Home"
+  name: "Mr. Krabs Home",
   address: "Bikini Bottom, Sponge Bob's universe",
   number_of_guests: 1,
   description: "This one is my own house. One vacant room until my daughter Pearl comes back from her exchange trip.",
@@ -68,7 +68,7 @@ Place.create!(
 )
 
 Place.create!(
-  name: "The Simpson's house"
+  name: "The Simpson's house",
   address: "Springfield, The Simposon's universe",
   number_of_guests: 5,
   description: "Beatiful, very large pink house in the suburbs of Springfield. Pets are welcome.",
@@ -78,7 +78,7 @@ Place.create!(
 )
 
 Place.create!(
-  name: "The Simpson's house"
+  name: "The Simpson's house",
   address: "Springfield, The Simposon's universe",
   number_of_guests: 5,
   description: "Beatiful, very large pink house in the suburbs of Springfield. Pets are welcome.",
