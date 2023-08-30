@@ -12,6 +12,10 @@
         <p class="text-center">Check-in: <%= order.start_date %></p>
         <p class="text-center">Check-out: <%= order.end_date %></p>
         <p class="text-center">Comment: <%= order.comment %></p>
+        <%= link_to "Delete", orders_path,
+                  data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+                  class: "del-order text-center btn btn-danger"
+              %>
       </div>
       <% end %>
     <% else %>
