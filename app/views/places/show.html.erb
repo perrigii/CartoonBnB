@@ -9,7 +9,7 @@
         <p class="card-text">Accomodates up to <%= @place.number_of_guests %> guests</p>
         <p class="card-text">R$<%= @place.price %> /night</p>
         <p class="card-text">Hosted by <%= @place.user.email %></p>
-        <%= link_to 'Back', places_path, class: 'btn btn-primary mb-2' %>
+        <%= link_to 'See all of our accommodations', places_path, class: 'btn btn-primary mb-2' %>
         <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
       </div>
     </div>
