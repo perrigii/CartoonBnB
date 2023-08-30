@@ -1,3 +1,42 @@
-<% @my_places.each do |place| %>
-  <%= place.name %>
-<% end %>
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-12">
+      <h1>All your places</h1>
+    </div>
+  </div>
+  <div class="row">
+    <% @my_places.each do |place| %>
+      <div class="col-md-4">
+        <div class="place-card">
+          <div class="place-card-image square-image">
+            <img class="card-img-top" src="<%= place.picture_url %>" alt="...">
+          </div>
+          <div class="place-card-content">
+            <div class="place-card-title">
+              <h4><%= place.name %></h4>
+            </div>
+            <p><%= place.address %></p>
+            <div class="flex">
+              <div class="flex align-items-center">
+                <i class="fa-solid fa-people-line"></i>
+                <span><%= place.number_of_guests %></span>
+              </div>
+              <div class="flex align-items-center">
+                <i class="fa-solid fa-euro-sign"></i>
+                <span><%= place.price %></span>
+              </div>
+            </div>
+          </div>
+          <div class="place-card-actions">
+            <%= link_to "More info", place_path(place) %>
+            <%= link_to "Edit", edit_place_path(place), class: "ms-3 text-warning" %>
+            <%= link_to "Remove", place_path(place),
+                data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+                class: "ms-3 text-danger"
+            %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
