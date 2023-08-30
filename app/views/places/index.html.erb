@@ -42,11 +42,13 @@
           </div>
           <div class="place-card-actions">
             <%= link_to "More info", place_path(place) %>
-            <%= link_to "Edit", edit_place_path(place), class: "ms-3 text-warning" %>
-            <%= link_to "Remove", place_path(place),
-                data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
-                class: "ms-3 text-danger"
-            %>
+            <% if place.user_id == current_user&.id %>
+              <%= link_to "Edit", edit_place_path(place), class: "ms-3 text-warning" %>
+              <%= link_to "Remove", place_path(place),
+                  data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+                  class: "ms-3 text-danger"
+              %>
+            <% end %>
           </div>
         </div>
       </div>
