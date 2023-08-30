@@ -4,7 +4,7 @@ User.destroy_all
 user = User.create!(email: 'teste@teste.com', password: '123123')
 mrkrabs = User.create!(email: 'mr@krabs.com', password: '123123')
 mrburns = User.create!(email: 'mr@burns.com', password: '123123')
-
+rick = User.create!(email: 'rick@morty.com', password: '123123')
 
 Place.create!(
   name: "Squidward's house",
@@ -115,4 +115,14 @@ Place.create!(
   picture_url: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fvignette.wikia.nocookie.net%2Fsimpsonstappedout%2Fimages%2Fb%2Fbd%2FKrustys_mansion.jpg%2Frevision%2Flatest%3Fcb%3D20140211072906&f=1&nofb=1&ipt=622406777790077c6b45d057a81b41be8bebeaf7588f8e26d71171e4a0e92f0c&ipo=images',
   price: 2000,
   user: mrburns
+)
+
+Place.create!(
+  name: "Smith's House",
+  address: "Dimension C-137, Rick and Morty's universe.",
+  number_of_guests: 5,
+  description: "Don't open the hatch in the garage. There's nothing there.",
+  picture_url: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fvignette.wikia.nocookie.net%2Frickandmorty%2Fimages%2Fb%2Fba%2FThe_Smith_Residence.jpg%2Frevision%2Flatest%2Fscale-to-width-down%2F2000%3Fcb%3D20151015031818&f=1&nofb=1&ipt=7bb14d14cca511269c4561654ba47abb4f4edc495c3ff5325d35196779c05df1&ipo=images',
+  price: 400,
+  user: rick
 )
