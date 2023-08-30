@@ -26,7 +26,6 @@ Place.create!(
   user: mrkrabs
 )
 
-
 Place.create!(
   name: "Patrick Star's house",
   address: "Bikini Bottom, Sponge Bob's universe.",
