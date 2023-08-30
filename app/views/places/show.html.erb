@@ -18,9 +18,10 @@
       <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?w=1200" class="card-img-top" style="height:460px">
       <div class="card-body">
         <h3 class="text-center"><%= @place.name %></h3>
-        <p class="card-text"><%= @place.description%>, localized at <%= @place.address %></p>
+        <p class="card-text"><%= @place.description%></p>
+        <p class="card-text">Localized at <%= @place.address %></p>
         <p class="card-text">Accomodates up to <%= @place.number_of_guests %> guests</p>
-        <p class="card-text"><%= @place.price %> reais/night</p>
+        <p class="card-text">R$<%= @place.price %> /night</p>
         <p class="card-text">Hosted by <%= @place.user.email %></p>
         <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
       </div>
