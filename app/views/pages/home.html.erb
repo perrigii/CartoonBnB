@@ -2,7 +2,7 @@
   <div class="mask py-3" style="background-color: rgba(0, 0, 0, 0.4);">
     <div class="container px-4 px-lg-5 my-5">
         <div class="text-center text-white">
-            <img class="display-4 fw-bolder" style="width: 350px;" src="https://www.imgbly.com/ib/eOb8ZzQbE8.png">
+            <img class="display-4 fw-bolder" style="width: 350px;" src="<%= asset_path "logotipo_bnb.png" %>">
             <p class="lead fw-normal mb-0 mt-3">Your dreamhouses come true</p>
         </div>
     </div>
@@ -33,7 +33,7 @@
             </div>
             <!-- Product actions-->
             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/places/<%= place.id %>">View options</a></div>
+                <div class="text-center"><a class="btn btn-primary mt-auto" href="/places/<%= place.id %>">View options</a></div>
             </div>
           </div>
         </div>
@@ -42,6 +42,4 @@
   </div>
 </section>
  <!-- Footer-->
-<footer class="py-5 bg-dark">
-    <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Cartoon BnB 2023</p></div>
-</footer>
+
