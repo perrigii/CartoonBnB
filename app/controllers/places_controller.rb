@@ -13,6 +13,10 @@ class PlacesController < ApplicationController
     end
   end
 
+  def my_places
+    @my_places = Place.where(user_id: current_user.id)
+  end
+
   def new
     @place = Place.new
   end

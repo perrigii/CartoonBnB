@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   resources :places do
     resources :orders, only: %i[new create]
   end
+  get "/my_places", to: "places#my_places", as: :my_places
   resources :orders, only: %i[index show]
 end
