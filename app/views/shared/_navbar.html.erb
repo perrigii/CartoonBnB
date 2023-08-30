@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light bg-orange navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-dark bg-orange navbar-lewagon">
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "logotipo_bnb.png", style: "width: 150px; height: auto;" %>
@@ -12,7 +12,7 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
+            <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "Messages", "#", class: "nav-link" %>
@@ -42,7 +42,7 @@
             <%= f.input :query, label: false, placeholder: 'Search', input_html: { class: 'form-control' }, wrapper_html: {class: 'm-0'} %>
           </div>
             <div class="col-auto"> <!-- Second column for search button -->
-            <%= f.button :submit, 'Search', class: 'btn btn-outline-dark' %>
+            <%= f.button :submit, 'Search', class: 'btn btn-outline-success' %>
           </div>
         </div>
       <% end %>
