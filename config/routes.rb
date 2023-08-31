@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'users/show'
   devise_for :users
   # root to: "places#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -12,4 +13,8 @@ Rails.application.routes.draw do
   resources :orders, only: %i[index show destroy]
 
   get 'about_us', to: 'pages#about_us'
+
+  get '/show', to: 'users#show'
+  resources :users, only: :show
+
 end

@@ -22,7 +22,7 @@
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar me-2", alt: "dropdown menu" %>
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Profile", "#", class: "dropdown-item" %>
+              <%= link_to "Profile", users_show_path, class: "dropdown-item" %>
               <%= link_to "My orders", orders_path, class: "dropdown-item" %>
               <%= link_to "My places", my_places_path, class: "dropdown-item" %>
               <%= link_to "Add place", new_place_path, class: "dropdown-item" %>
