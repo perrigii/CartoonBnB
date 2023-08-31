@@ -8,14 +8,31 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+
+      <div class="">
+        <%= simple_form_for :search, url: places_path, method: :get, class: 'd-flex align-items-center ' do |f| %>
+          <div class="row g-2 ">
+            <div class="col-auto ">
+              <%= f.input :query, label: false, placeholder: 'Search', input_html: { class: 'form-control' }, wrapper_html: {class: 'm-0'} %>
+            </div>
+              <div class="col-auto"> <!-- Second column for search button -->
+              <%= f.button :submit, 'Search', class: 'btn btn-outline-success' %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
       <ul class="navbar-nav me-auto">
+
           <li class="nav-item active">
             <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
+
           <li class="nav-item">
             <%= link_to "About us", about_us_path, class: "nav-link" %>
           </li>
+
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -38,16 +55,8 @@
           </div>
         <% end %>
       </ul>
-      <%= simple_form_for :search, url: places_path, method: :get, class: 'd-flex align-items-center' do |f| %>
-        <div class="row g-2">
-          <div class="col-auto">
-            <%= f.input :query, label: false, placeholder: 'Search', input_html: { class: 'form-control' }, wrapper_html: {class: 'm-0'} %>
-          </div>
-            <div class="col-auto"> <!-- Second column for search button -->
-            <%= f.button :submit, 'Search', class: 'btn btn-outline-success' %>
-          </div>
-        </div>
-      <% end %>
+
+
     </div>
   </div>
 </div>
