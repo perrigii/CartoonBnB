@@ -1,6 +1,6 @@
 class PlacesController < ApplicationController
   before_action :set_place, only: %i[show edit update destroy]
-  before_action :authenticate_user!, only: %i[new create update destroy]
+  before_action :authenticate_user!, only: %i[new create update destroy my_places]
 
   def index
     if params[:search].present? && params[:search][:query].present?
