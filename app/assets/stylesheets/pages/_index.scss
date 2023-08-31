@@ -9,6 +9,7 @@
     font-size: 30px;
     text-shadow: 1px 1px 1px #414141;
     font-weight: 800;
+    color: rgb(60, 59, 59);
   }
 }
 
@@ -20,6 +21,10 @@
 	height:400px;
   box-sizing: border-box;
   overflow: hidden;
+  background-color: whitw;
+  color: rgb(60, 59, 59);
+
+
   &:hover {
     .edit-btn, .delete-btn{
       display: block;
