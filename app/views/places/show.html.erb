@@ -1,36 +1,36 @@
 <div class="">
   <div class="d-flex justify-content-center">
-    <div class="card col-lg-6 my-3 ms-4">
+    <div class="card col-lg-6 my-3 ms-4 card-ref">
       <%= image_tag("#{@place.picture_url}") %>
       <div class="card-body">
-        <h3 class="text-center"><%= @place.name %></h3>
-        <p class="card-text"><%= @place.description%></p>
+        <h3 class="text-center"><strong><%= @place.name %></strong></h3>
+        <p class="card-text mt-4"><%= @place.description%></p>
         <p class="card-text">Localized at <%= @place.address %></p>
         <p class="card-text">Accomodates up to <%= @place.number_of_guests %> guests</p>
         <p class="card-text">R$<%= @place.price %> /night</p>
         <p class="card-text">Hosted by <%= @place.user.email %></p>
-        <%= link_to 'See all of our accommodations', places_path, class: 'btn btn-primary mb-2' %>
-        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+        <%= link_to 'See our available dates', new_place_order_path(@place), class: 'btn-see btn btn-primary mb-2 mt-3 btn-available' %>
+        <p class="card-text mt-4"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
       </div>
     </div>
+
     <div class="d-flex flex-column col-lg-4 px-3 my-3">
-      <%= link_to 'See our available dates', new_place_order_path(@place), class: 'btn btn-primary mb-3 p-3' %>
       <div class="">
-        <div class="card w-100 h-64 mt-2">
+        <div class="card w-100 h-64 mt-2 card-ref">
           <div class="card-body">
-            <h5 class="card-title">House Rules</h5>
+            <h5 class="card-title"><strong>House Rules</strong></h5>
             <p class="card-text"><ul>
               <li>Please do not enter the house with your shoes on</li>
               <li>Party as much as you can</li>
               <li>Have fun while staying here</li>
               <li>Eat as much as Krusty Krab hamburguer as you want</li>
             </ul></p>
-            <%= link_to 'Rent this place now!', new_place_order_path(@place), class: 'btn btn-primary' %>
           </div>
         </div>
-        <div class="card w-100 h-64 mt-5">
+
+        <div class="card w-100 h-64 mt-4 card-ref">
           <div class="card-body">
-            <h5 class="card-title">House Amenities</h5>
+            <h5 class="card-title"><strong>House Amenities</strong></h5>
             <p class="card-text"><ul>
               <li>Public or shared beach access - Beachfront</li>
               <li>Kitchen</li>
@@ -39,12 +39,18 @@
               <li>Outdoor shower</li>
               <li>Beach view</li>
             </ul></p>
-            <%= link_to 'Rent this place now!', new_place_order_path(@place), class: 'btn btn-primary' %>
           </div>
         </div>
-        <div class="card w-100 h-64 mt-5">
+
+       <div class="btn-rent">
+          <div class="mt-5 d-flex w-100 justify-content-center">
+            <%= link_to 'Rent this place now!', new_place_order_path(@place), class: 'btn-see btn btn-primary btn-lg mb-3 p-3 w-100' %>
+          </div>
+        </div>
+
+        <div class="card w-100 h-64 mt-5 card-ref">
           <div class="card-body">
-            <h5 class="card-title">Contact the host</h5>
+            <h5 class="card-title"><strong>Contact the host</strong></h5>
             <p class="card-text"><ul>
             <li> <%= @place.user.email %> </li>
             </ul></p>
