@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   end
   get "/my_places", to: "places#my_places", as: :my_places
   resources :orders, only: %i[index show destroy]
+
+  get 'about_us', to: 'pages#about_us'
 end
