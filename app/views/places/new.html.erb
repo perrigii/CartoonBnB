@@ -1,12 +1,15 @@
-<div class="text-center mt-4">
-  <h1>It is easy to get started on CartoonB&B</h1>
-</div>
-
 <div class="container">
-  <%= render 'form', place: @place %>
-  <div class="row text-center">
-    <div class="mx-auto col-10 col-md-8 col-lg-6">
-      <%= link_to 'back', places_path, class: 'btn btn-sm btn-primary mt-4'%>
+  <div class="text-center mt-4">
+    <h1 class="my-4">It is easy to get started on CartoonB&B</h1>
+  </div>
+  <div class="row justify-content-center">
+    <div class="form-new-place col-8 col-md-6">
+      <%= render 'form', place: @place, class: "w-100" %>
+      <div class="row text-center">
+        <div class="mx-auto col-10 col-md-8 col-lg-6">
+          <%= link_to 'back', places_path, class: 'btn btn-sm btn-primary my-4'%>
+        </div>
+      </div>
     </div>
   </div>
 </div>
