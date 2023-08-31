@@ -1,10 +1,10 @@
 Place.destroy_all
 User.destroy_all
 
-user = User.create!(email: 'teste@teste.com', password: '123123')
-mrkrabs = User.create!(email: 'mr@krabs.com', password: '123123')
-mrburns = User.create!(email: 'mr@burns.com', password: '123123')
-rick = User.create!(email: 'rick@morty.com', password: '123123')
+user = User.create!(description: "a", username: "teste", full_name: "teste teste", email: 'teste@teste.com', password: '123123')
+mrkrabs = User.create!(description: "a", username: "mr_krabs", full_name: "teste teste", email: 'mr@krabs.com', password: '123123')
+mrburns = User.create!(description: "a", username: "mr_burns", full_name: "teste teste", email: 'mr@burns.com', password: '123123')
+rick = User.create!(description: "a", username: "rick_morty", full_name: "teste teste", email: 'rick@morty.com', password: '123123')
 
 Place.create!(
   name: "Squidward's house",
