@@ -1,6 +1,6 @@
 .del-order {
   color: rgb(253, 253, 253);
-  box-shadow: 1px 1px 1px #616161;
+  box-shadow: 1px 1px 1px #eb822dc0;
   width: 70px;
   background-color: #ad39ad;
   border: 1px solid #ad39ad;
@@ -8,6 +8,8 @@
     background-color: #6e1b6e;
     border: none;
     font-weight: lighter;
-    box-shadow: 0px 2px 2px #616161;
+    text-shadow: none;
+    color: rgb(253, 253, 253);
+    box-shadow: 0px 0px 3px #61616188;
   }
 }
