@@ -7,14 +7,14 @@
 
   <div class="row">
   <div class="col">
-    <% if @places.any? { |place| place.name.include?(@query) || place.description.include?(@query) } %>
+    <% if @places.any? { |place| place.name.downcase.include?(@query.downcase) || place.description.include?(@query) } %>
       <p>You searched for <strong><%= @query %></strong>. We found <%= @places.count %> places out of our <%= Place.count %> on our website.</p>
 
       <section class="py-1">
         <div class="cards container px-8 px-lg-8 mt-1">
           <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
             <% @places.each do |place| %>
-              <% if place.name.include?(@query) || place.description.include?(@query) %>
+              <% if place.name.downcase.include?(@query.downcase) || place.description.include?(@query) %>
                 <div class="col mb-5">
                   <div class="total-cards card h-100">
                     <div class="place-card-image square-image">
