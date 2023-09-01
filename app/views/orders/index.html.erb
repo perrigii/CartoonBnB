@@ -7,12 +7,13 @@
     <div id="card-container" class="row justify-content-around align-items-center p-4">
     <% if @orders.present? %>
       <% @orders.each do |order|%>
-      <div id="card-order" class="row justify-content-around align-items-center col-6 col-md-4 col-lg-3 m-4">
-        <p class="text-center"><strong>Book to: </strong><%= order.place.name %></p>
-        <p class="text-center"><strong>Check-in: </strong><%= order.start_date %></p>
-        <p class="text-center"><strong>Check-out: </strong><%= order.end_date %></p>
-        <p class="text-center"><strong>Comment: </strong><%= order.comment %></p>
-        <%= link_to "Delete", order_path(order), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "del-order text-center btn btn-danger"
+      <div id="card-order" class="align-items-center col-6 col-md-4 col-lg-3 m-4">
+        <p class=""><strong>Book to: </strong><%= order.place.name %></p>
+        <img src="<%= order.place.picture_url %>" alt="Place Image" class="img-fluid">
+        <p class="pt-3"><strong>Check in: </strong><%= order.start_date.strftime('%d/%m/%Y') %></p>
+        <p class=""><strong>Check out: </strong><%= order.end_date.strftime('%d/%m/%Y') %></p>
+        <p class=""><strong>Comment: </strong><%= order.comment %></p>
+        <%= link_to "Delete", order_path(order), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "del-order text-center btn btn-danger mx-auto d-block"
         %>
       </div>
       <% end %>
