@@ -14,7 +14,6 @@ Rails.application.routes.draw do
 
   get 'about_us', to: 'pages#about_us'
 
-  get '/show', to: 'users#show'
   resources :users, only: :show
 
 end
