@@ -9,7 +9,7 @@
         <p class="card-text">Accomodates up to <%= @place.number_of_guests %> guests</p>
         <p class="card-text">R$<%= @place.price %> /night</p>
         <p class="card-text">Hosted by <%= @place.user.email %></p>
-        <%= link_to 'See our available dates', new_place_order_path(@place), class: 'btn-see btn btn-primary mb-2 mt-3 btn-available' %>
+        <%= link_to 'See our available dates', new_place_order_path(@place), class: 'btn-see btn btn-primary mb-2 mt-3 btn-available' unless current_user == @place.user%>
         <p class="card-text mt-4"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
       </div>
     </div>
@@ -44,7 +44,7 @@
 
        <div class="btn-rent">
           <div class="mt-5 d-flex w-100 justify-content-center">
-            <%= link_to 'Rent this place now!', new_place_order_path(@place), class: 'btn-see btn btn-primary btn-lg mb-3 p-3 w-100' %>
+            <%= link_to 'Rent this place now!', new_place_order_path(@place), class: 'btn-see btn btn-primary btn-lg mb-3 p-3 w-100' unless current_user == @place.user %>
           </div>
         </div>
 
