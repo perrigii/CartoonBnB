@@ -27,13 +27,13 @@
                       input_html: { autocomplete: "new-password", placeholder: "Confirm your password", class:"mb-3" } %>
         </div>
 
-        <div class="form-actions mt-4 d-flex justify-content-evenly col-6">
+        <div class="form-actions mt-4 d-flex justify-content-between col-12 ">
           <%= render "devise/shared/links" %>
-          <%= f.button :submit, "Sign up", class: "btn bg-success text-white ms-2 px-4" %>
+          <%= f.button :submit, "Sign up", class: "btn btn-success text-white px-4 mt-3" %>
         <% end %>
         </div>
     </div>
-    <div class="sigin-img col-5">
+    <div class="sigin-img col-5 m-4">
       <%= image_tag "kisspng-mandy-grim-cartoon-network-5af47b3eaca238.9307761115259717747071.png", alt: "Desenho animado", class: "rick-img"%>
     </div>
   </div>

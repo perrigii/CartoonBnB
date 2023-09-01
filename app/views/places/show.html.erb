@@ -44,7 +44,7 @@
 
        <div class="btn-rent">
           <div class="mt-5 d-flex w-100 justify-content-center">
-            <%= link_to 'Rent this place now!', new_place_order_path(@place), class: 'btn-see btn btn-primary btn-lg mb-3 p-3 w-100' %>
+            <%= link_to 'Rent this place now!', new_place_order_path(@place), class: 'btn-see btn btn-primary btn-lg mb-3 p-3 w-100' unless current_user == @place.user %>
           </div>
         </div>
 

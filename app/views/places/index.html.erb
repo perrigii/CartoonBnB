@@ -6,63 +6,66 @@
   </div>
 
   <div class="row">
-    <div class="col">
-      <% if @query.present? %>
-        <p>You searched for <strong><%= @query %></strong>. We found <%= @places.count %> places out of our <%= Place.count %> on our website.</p>
-      <% else %>
-        <p>All <%= Place.count %> places.</p>
-      <% end %>
-    </div>
-  </div>
+  <div class="col">
+    <% if @places.any? { |place| place.name.include?(@query) || place.description.include?(@query) } %>
+      <p>You searched for <strong><%= @query %></strong>. We found <%= @places.count %> places out of our <%= Place.count %> on our website.</p>
 
-  <section class="py-1">
-    <div class="cards container px-8 px-lg-8 mt-1">
-      <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-        <% @places.each do |place| %>
-          <div class="col mb-5">
-            <div class="total-cards card h-100">
-              <div class="place-card-image square-image">
-                <img class="card-img-top" src="<%= place.picture_url %>" alt="...">
-              </div>
-              <div class="card-body p-3 text-center">
-                <div class="place-card-content">
-                  <div class="place-card-title">
-                    <h4 class="fw-bolder"><%= place.name %></h4>
-                  </div>
-                  <div class="flex">
-                    <div>
-                      <i class="fa-solid fa-dollar-sign"></i>
-                      <span><%= place.price %></span>
+      <section class="py-1">
+        <div class="cards container px-8 px-lg-8 mt-1">
+          <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <% @places.each do |place| %>
+              <% if place.name.include?(@query) || place.description.include?(@query) %>
+                <div class="col mb-5">
+                  <div class="total-cards card h-100">
+                    <div class="place-card-image square-image">
+                      <img class="card-img-top" src="<%= place.picture_url %>" alt="...">
                     </div>
-                    <div class="ms-3">
-                      <i class="fa-solid fa-people-group"></i>
-                      <span><%= place.number_of_guests %></span>
+                    <div class="card-body p-3 text-center">
+                      <div class="place-card-content">
+                        <div class="place-card-title">
+                          <h4 class="fw-bolder"><%= place.name %></h4>
+                        </div>
+                        <div class="flex">
+                          <div>
+                            <i class="fa-solid fa-dollar-sign"></i>
+                            <span><%= place.price %></span>
+                          </div>
+                          <div class="ms-3">
+                            <i class="fa-solid fa-people-group"></i>
+                            <span><%= place.number_of_guests %></span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="place-card-actions">
+                        <div class=" card-footer  pt-2 border-top-0 bg-transparent">
+                          <div class="text-center"><a class="button-details btn btn-primary mt-auto" href="/places/<%= place.id %>">See details</a></div>
+                        </div>
+
+                        <% if place.user_id == current_user&.id %>
+                          <%= link_to edit_place_path(place), class: "edit-btn ms-3" do %>
+                            <i class="fa-solid fa-pen-to-square text-black"></i>
+                          <% end %>
+                          <%= link_to place_path(place),
+                              data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+                              class: "delete-btn ms-3" do
+                          %>
+                            <i class="fa-solid fa-trash text-black"></i>
+                          <% end %>
+                        <% end %>
+                      </div>
                     </div>
                   </div>
                 </div>
-
-                <div class="place-card-actions">
-                  <div class=" card-footer  pt-2 border-top-0 bg-transparent">
-                    <div class="text-center"><a class="button-details btn btn-primary mt-auto" href="/places/<%= place.id %>">See details</a></div>
-                  </div>
-
-                  <% if place.user_id == current_user&.id %>
-                    <%= link_to edit_place_path(place), class: "edit-btn ms-3" do %>
-                      <i class="fa-solid fa-pen-to-square text-black"></i>
-                    <% end %>
-                    <%= link_to place_path(place),
-                        data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
-                        class: "delete-btn ms-3" do
-                    %>
-                      <i class="fa-solid fa-trash text-black"></i>
-                    <% end %>
-                  <% end %>
-                </div>
-              </div>
-            </div>
+              <% end %>
+            <% end %>
           </div>
-        <% end %>
-      </div>
-    </div>
-  </section>
+        </div>
+      </section>
+    <% else %>
+      <p> Sorry! We didn't find <strong><%= @query %></strong> on our website.</p>
+      <%= image_tag "Daco_153744.png", alt: "Desenho animado", class: "rick-img" %>
+    <% end %>
+  </div>
+</div>
+
 </div>
