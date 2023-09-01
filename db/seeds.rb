@@ -15,16 +15,6 @@ utonium = User.create!(description: "Single father of the most adorable girls on
 p utonium.full_name
 
 Place.create!(
-  name: "Squidward's House",
-  address: "Bikini Bottom, Sponge Bob's universe.",
-  number_of_guests: 3,
-  description: "A beutiful house with many rooms and floors. Perfect for art enthusiasts.",
-  picture_url: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.NUgD8XJbNMyI0yvXXpX5lQHaFk%26pid%3DApi&f=1&ipt=3061db28d4d74d7b52c99810b283d2d527bb1b55dd2b477c29d6481f8dbbd26a&ipo=images',
-  price: 400,
-  user: mrkrabs
-)
-
-Place.create!(
   name: "Sponge Bob's House",
   address: "Bikini Bottom, Sponge Bob's universe.",
   number_of_guests: 2,
@@ -151,5 +141,15 @@ Place.create!(
   description: "Please don't answer the phone while you're staying, unless you're up to the task.",
   picture_url: 'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn.quizly.co%2Fwp-content%2Fuploads%2F2016%2F01%2F18001359%2F14-The-Powerpuff-Girls.png&f=1&nofb=1&ipt=f4ad084d9312b8d471f4cfc0b49f7c6fab5e13d9287b40dfd09af0fe73267acf&ipo=images',
   price: 100,
+  user: utonium
+)
+
+Place.create!(
+  name: "Mojo's Lair",
+  address: "Townsville, Powerpuff Girls universe",
+  number_of_guests: 1,
+  description: "No girls allowed.",
+  picture_url: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F53%2F67%2Fff%2F5367ff5ee7a5fbd5c1048bb24ec0fd67.jpg&f=1&nofb=1&ipt=6ff30f17a3fdb8ccf42802b8d8042f4a098814dd0f6715d2f63380c9a7809ea2&ipo=images',
+  price: 1000,
   user: utonium
 )
