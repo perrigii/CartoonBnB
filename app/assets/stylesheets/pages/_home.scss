@@ -12,14 +12,20 @@
   color: rgb(60, 59, 59);
 }
 
-.button-details{
+.button-details {
   border-radius: 20px;
 
 }
 
 
-.flex{
+.flex {
   display: flex;
   align-items: center;    /* Centraliza horizontalmente */
   justify-content: center;
+}
+
+.banner-home {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }

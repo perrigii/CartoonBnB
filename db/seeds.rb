@@ -2,10 +2,17 @@ Place.destroy_all
 User.destroy_all
 
 user = User.create!(description: "a", username: "teste", full_name: "teste teste", email: 'teste@teste.com', password: '123123')
+p user.full_name
 mrkrabs = User.create!(description: "Aaargh, don't touch me money!", username: "mr_krabs", full_name: "Mr. Krabs", email: 'mr@krabs.com', password: '123123')
-mrburns = User.create!(description: "a", username: "mr_burns", full_name: "teste teste", email: 'mr@burns.com', password: '123123')
+p mrkrabs.full_name
+mrburns = User.create!(description: "a", username: "mr_burns", full_name: "Mr. Burns", email: 'mr@burns.com', password: '123123')
+p mrburns.full_name
 rick = User.create!(description: "It's time to get shwifty in here!! Raise your posterior! Rick and morty time one hundred years", username: "rick_morty", full_name: "Rick Sanchez", email: 'rick@morty.com', password: '123123')
+p rick.full_name
 eustace = User.create!(description: "Stupid dog!!", username: "eustace", full_name: "Eustace Baggs", email: 'eustace@courage.com', password: '123123')
+p eustace.full_name
+utonium = User.create!(description: "Single father of the most adorable girls on Townsville", username: "prof_utonion", full_name: "Professor Utonium", email: 'powerpuff@girls.com', password: '123123')
+p utonium.full_name
 
 Place.create!(
   name: "Squidward's House",
@@ -135,4 +142,14 @@ Place.create!(
   picture_url: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdnb.artstation.com%2Fp%2Fassets%2Fimages%2Fimages%2F026%2F519%2F051%2Flarge%2Ffrancis-reoma-courage-home.jpg%3F1588978567&f=1&nofb=1&ipt=0383aa803940ec0565b1da7a8cf2b06505de18dbc64d38209545f3f772a13c43&ipo=images',
   price: 100,
   user: eustace
+)
+
+Place.create!(
+  name: "Powerpuff Girls House",
+  address: "Townsville, Powerpuff Girls universe",
+  number_of_guests: 4,
+  description: "Please don't answer the phone while you're staying, unless you're up to the task.",
+  picture_url: 'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn.quizly.co%2Fwp-content%2Fuploads%2F2016%2F01%2F18001359%2F14-The-Powerpuff-Girls.png&f=1&nofb=1&ipt=f4ad084d9312b8d471f4cfc0b49f7c6fab5e13d9287b40dfd09af0fe73267acf&ipo=images',
+  price: 100,
+  user: utonium
 )
