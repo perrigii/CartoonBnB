@@ -28,7 +28,7 @@
     <div>
       <ul class="navbar-nav me-auto">
 
-          <li class="nav-item active">
+          <li class="nav-item">
             <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
 
@@ -46,7 +46,6 @@
               <%= link_to "My orders", orders_path, class: "dropdown-item" %>
               <%= link_to "My places", my_places_path, class: "dropdown-item" %>
               <%= link_to "Add place", new_place_path, class: "dropdown-item" %>
-              <%= link_to "Settings", "#", class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>
