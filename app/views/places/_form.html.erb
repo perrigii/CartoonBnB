@@ -1,22 +1,28 @@
 <%= simple_form_for([@place]) do |f| %>
-  <div class="form-inputs">
-    <div class="row">
-      <div class="mx-auto col-10 col-md-8 col-lg-6 p-4">
-        <%= f.input :name, as: :string, input_html: { placeholder: "Enter your place's name", class:"mb-3" } %>
-        <%= f.input :address, as: :text, input_html: { placeholder: "Place's address", class:"mb-3" } %>
-        <%= f.input :number_of_guests, as: :integer, input_html: { placeholder: "How many guests?", class:"mb-3" } %>
-        <%= f.input :description, as: :text, input_html: { placeholder: "Describe your place here", class:"mb-3" } %>
-        <%= f.input :picture_url, as: :url, input_html: { class:"mb-3" } %>
-        <%= f.input :price, as: :float, input_html: { class:"mb-3" } %>
-      </div>
-    </div>
-  </div>
+  <div class="form-inputs new-form">
+    <div class="row p-4">
+      <div class="mx-auto col-12 col-md-10 p-4 w-100">
 
-  <div class="form-actions">
-  <br>
-    <div class="row text-center">
-      <div class="mx-auto col-10 col-md-8 col-lg-6">
-        <%= f.button :submit, "Create", class: "btn btn-primary" %>
+        <%= f.input :name, as: :string, label: false, input_html: { placeholder: "Enter your place's name", class:"round-input form-control mb-4 " } %>
+
+        <%= f.input :address, as: :text, label: false, input_html: { placeholder: "Place's address", class:"round-input form-control rounded mb-4" } %>
+
+        <%= f.input :number_of_guests, label: false, as: :integer, input_html: { placeholder: "How many guests?", class:"round-input mb-4" } %>
+
+        <%= f.input :description, label: false, as: :text, input_html: { placeholder: "Describe your place here", class:"round-input form-control mb-4" } %>
+
+        <%= f.input :picture_url, label: false, as: :url, input_html: { placeholder:"Image URL", class:"round-input mb-4" } %>
+
+        <%= f.input :price, label: false, as: :float, input_html: { placeholder: "Price", class:"round-input mb-4" } %>
+      </div>
+
+      <div class="form-actions">
+        <div class="row text-center">
+          <div class="mx-auto col-10 col-md-8 col-lg-6 mb-2 ">
+            <%= f.button :submit, "Create", class: "btn btn-primary mt-2 mb-3 btn-create" %>
+            <%= link_to 'Back', places_path, class: 'btn btn btn-primary mt-2 btn-back'%>
+          </div>
+        </div>
       </div>
     </div>
   </div>
