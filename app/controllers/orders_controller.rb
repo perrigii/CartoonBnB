@@ -8,6 +8,7 @@ class OrdersController < ApplicationController
   def new
     @order = Order.new
     @place = Place.find(params[:place_id])
+    redirect_to places_path, alert: "As host, you can't rent this place." if current_user == @place.user
   end
 
   def show
@@ -16,6 +17,7 @@ class OrdersController < ApplicationController
 
   def create
     @place = Place.find(params[:place_id])
+    redirect_to places_path, alert: "As host, you can't rent this place." if current_user == @place.user
     @order = Order.new(order_params)
     @order.place = @place
     @order.user = current_user
