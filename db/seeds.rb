@@ -2,12 +2,13 @@ Place.destroy_all
 User.destroy_all
 
 user = User.create!(description: "a", username: "teste", full_name: "teste teste", email: 'teste@teste.com', password: '123123')
-mrkrabs = User.create!(description: "a", username: "mr_krabs", full_name: "teste teste", email: 'mr@krabs.com', password: '123123')
+mrkrabs = User.create!(description: "Aaargh, don't touch me money!", username: "mr_krabs", full_name: "Mr. Krabs", email: 'mr@krabs.com', password: '123123')
 mrburns = User.create!(description: "a", username: "mr_burns", full_name: "teste teste", email: 'mr@burns.com', password: '123123')
-rick = User.create!(description: "a", username: "rick_morty", full_name: "teste teste", email: 'rick@morty.com', password: '123123')
+rick = User.create!(description: "It's time to get shwifty in here!! Raise your posterior! Rick and morty time one hundred years", username: "rick_morty", full_name: "Rick Sanchez", email: 'rick@morty.com', password: '123123')
+eustace = User.create!(description: "Stupid dog!!", username: "eustace", full_name: "Eustace Baggs", email: 'eustace@courage.com', password: '123123')
 
 Place.create!(
-  name: "Squidward's house",
+  name: "Squidward's House",
   address: "Bikini Bottom, Sponge Bob's universe.",
   number_of_guests: 3,
   description: "A beutiful house with many rooms and floors. Perfect for art enthusiasts.",
@@ -17,7 +18,7 @@ Place.create!(
 )
 
 Place.create!(
-  name: "Sponge Bob's house",
+  name: "Sponge Bob's House",
   address: "Bikini Bottom, Sponge Bob's universe.",
   number_of_guests: 2,
   description: "It's a pineapple under the sea.",
@@ -27,7 +28,7 @@ Place.create!(
 )
 
 Place.create!(
-  name: "Patrick Star's house",
+  name: "Patrick Star's House",
   address: "Bikini Bottom, Sponge Bob's universe.",
   number_of_guests: 1,
   description: "A simple accomodating ambient under a rock.",
@@ -124,4 +125,14 @@ Place.create!(
   picture_url: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fvignette.wikia.nocookie.net%2Frickandmorty%2Fimages%2Fb%2Fba%2FThe_Smith_Residence.jpg%2Frevision%2Flatest%2Fscale-to-width-down%2F2000%3Fcb%3D20151015031818&f=1&nofb=1&ipt=7bb14d14cca511269c4561654ba47abb4f4edc495c3ff5325d35196779c05df1&ipo=images',
   price: 400,
   user: rick
+)
+
+Place.create!(
+  name: "Middle of Nowhere",
+  address: "Middle of Nowhere, Courage the Cowardly Dog's universe",
+  number_of_guests: 3,
+  description: "Nothing unusual happens in this house, come check it out!",
+  picture_url: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdnb.artstation.com%2Fp%2Fassets%2Fimages%2Fimages%2F026%2F519%2F051%2Flarge%2Ffrancis-reoma-courage-home.jpg%3F1588978567&f=1&nofb=1&ipt=0383aa803940ec0565b1da7a8cf2b06505de18dbc64d38209545f3f772a13c43&ipo=images',
+  price: 100,
+  user: eustace
 )
